@@ -28,9 +28,10 @@ class App extends Component {
   }
 
   search (checkin, checkout) {   
-    axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=testando&type=video&key=AIzaSyAB_tTATR8nJh02oDfHEIyAQTgiLo8P9YQ`).then((response) => {    
+    axios.get(`https://www.raphaelfabeni.com.br/rv/hotels.json`).then((response) => {  
+      console.log(response.data.hotels)  
       this.setState({
-        shows: response.data.items,
+        shows: response.data.hotels,
         in: checkin,
         out: checkout,
         error: null
@@ -60,10 +61,25 @@ class App extends Component {
       <div class="app">
         <Header />
         <div className='grid box'>
-          <SearchBar onSearch={this.search} />
-          <Detail checkin={this.state.in} checkout={this.state.out} />
-          <ShowList shows={this.state.shows} onShowSelect={(selectedShow) => this.setState({selectedShow})} />
+          <SearchBar onSearch={this.search} />          
         </div>
+
+        <div className='grid--header box'>
+
+          <div className="col-1-1">
+            <Detail checkin={this.state.in} checkout={this.state.out} />
+          </div>
+          
+          <div className="col-3-12 mobile-1-1">
+            filter
+          </div>
+
+          <div className="col-9-12 mobile-1-1">
+            <ShowList shows={this.state.shows} onShowSelect={(selectedShow) => this.setState({selectedShow})} />
+          </div>
+         
+        </div>
+
         <Footer text={`© 2004-${(new Date()).getFullYear()} Visit Charlotte. All Rights Reserved. 500 S. College Street, Suite 300, Charlotte, NC 28202`} />
       </div>
     )

@@ -22,6 +22,26 @@ const   formatDate = (date) => {
 
 }
 
+
+const   formatCalendar = (date) => {
+  
+  date = new Date(date)
+
+  var monthNames = [
+    "January", "February", "March",
+    "April", "May", "June", "July",
+    "August", "September", "October",
+    "November", "December"
+  ];
+
+  var day = date.getDate();
+  var monthIndex = date.getMonth();
+  var year = date.getFullYear();
+
+  return  `${monthNames[monthIndex]} / ${year}`;
+
+}
+
   
 class Search extends React.Component {
 
@@ -68,39 +88,59 @@ class Search extends React.Component {
     }
 
     return (
-      <section className="filter">        
-        <header className="header"><h4 className="title filter__title">Select the dates to stay in Charlotte</h4></header>
+      <section className="filter"> 
+
+        <header className="header"><h4 className="title title--normal filter__title">Select the dates to stay in Charlotte</h4></header>
 
         <div className="col-1-2 mobile-col-1-1">
-        <div>
+        <div className="search__check">
            CHECK-IN
-          <div>
+          <div className="search__label">
             {formatDate(this.state.checkin)}
           </div>
         </div>
-        <div>
+        <div className="search__check">
            CHECK-OUT
-          <div>
+          <div className="search__label">
            {formatDate(this.state.checkout)}
           </div>
         </div>
-        <form className='search' onSubmit={this.onSubmit.bind(this)}>
-         
-          <span className='search__group'><button className='search__button' type='submit'> Buscar </button></span>
+        <form className='search' onSubmit={this.onSubmit.bind(this)}>         
+         <button className='button' type='submit'> Search hotel </button>
         </form>
         </div>
         <div className="col-1-2 mobile-col-1-1">
-        <InfiniteCalendar         
+        <div className="calendar__header">
+          {formatCalendar(this.state.checkin)} -  {formatCalendar(this.state.checkout)}
+        </div>
+        <InfiniteCalendar 
           minDate={lastWeek}
           Component={withRange(Calendar)}         
             onSelect={function(date) {
               if(date.eventType == 3){
                 refreshDate(date)                        
               }                      
-          }}      
+          }} 
+          height={350}
           displayOptions={{
             showHeader: false
-          }}           
+          }}
+          theme={{
+            selectionColor: '#79BD1A',
+            textColor: {
+              default: '#333',
+              active: '#FFF'
+            },
+            weekdayColor: '#fff',
+            headerColor: '#fff',
+            floatingNav: {
+              background: '#79BD1A',
+              color: '#FFF',
+              chevron: '#79BD1A'
+            },
+            
+            
+         }}           
         />
         </div>
       </section>

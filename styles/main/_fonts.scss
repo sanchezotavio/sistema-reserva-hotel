@@ -93,3 +93,16 @@
     font-style: normal;
 
 }
+
+
+
+@font-face {
+    font-family: 'Montserrat-SemiBold';
+    src: url('../styles/fonts/Montserrat/Montserrat-SemiBold.woff2') format('woff2'),
+        url('../styles/fonts/Montserrat/Montserrat-SemiBold.woff') format('woff'),
+        url('../styles/fonts/Montserrat/Montserrat-SemiBold.ttf') format('truetype'),
+        url('../styles/fonts/Montserrat/Montserrat-SemiBold.svg#Montserrat-SemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+

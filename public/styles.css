@@ -35,7 +35,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   position: relative; }
 
 .grid--header {
-  max-width: 1820px; }
+  max-width: 1480px; }
 
 .grid:after, .grid--header:after {
   content: "";
@@ -262,6 +262,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   font-weight: normal;
   font-style: normal; }
 
+@font-face {
+  font-family: 'Montserrat-SemiBold';
+  src: url(2f3f9c1557f09e192bfa3e2bebb20ad3.woff2) format("woff2"), url(3d2d13853665147fb8c2353d61c077ce.woff) format("woff"), url(aebf4fe19e37e3d508a8f6950f9378d1.ttf) format("truetype"), url(917453d5a1eaa8b831d21ef22782546b.svg#Montserrat-SemiBold) format("svg");
+  font-weight: 600;
+  font-style: normal; }
+
 /*font*/
 /*colors*/
 /* main style*/
@@ -278,25 +284,39 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   color: #F98100; }
 
 .title {
-  font-family: "heebobold"; }
+  font-family: "Montserrat-SemiBold"; }
   .title--welcome {
     color: #fff;
-    font-size: 1.2em;
+    font-size: 22px;
     padding: 8px 0;
     letter-spacing: 3px;
     letter-spacing: 15px; }
   .title--main {
     color: #fff;
-    font-size: 5.5em;
-    padding: 20px 0 15px 0;
+    font-size: 76px;
+    padding-top: 20px;
+    padding-bottom: 15px;
     line-height: 84px;
-    font-family: "heeboblack";
+    font-family: "Montserrat-SemiBold";
     letter-spacing: 15px; }
   .title--sub {
     color: #fff;
-    font-size: 1.2em;
+    font-size: 22px;
     padding: 8px 0;
     letter-spacing: 3px; }
+  .title--normal {
+    font-family: "montserratregular";
+    font-size: 22px; }
+
+.image {
+  width: 100%;
+  max-width: 238px;
+  margin: auto;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  z-index: 1;
+  position: relative; }
 
 @media (max-width: 600px) {
   .title {
@@ -306,18 +326,67 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
       padding: 0; }
     .title--main {
       font-size: 3em;
-      padding: 5px 0px 0px;
+      padding-top: 5px;
       line-height: 50px; }
     .title--sub {
       font-size: 1em;
       padding: 0; }
-    .title__filter {
-      letter-spacing: 1px; } }
+    .title--normal {
+      font-size: 1em;
+      padding: 0; } }
 
 .lines {
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
-  display: inline-block; }
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px; }
+
+.line-right {
+  border-right: 1px solid #B5B5B5;
+  display: inline-block;
+  width: 96%;
+  padding-right: 4%; }
+
+@media (max-width: 767px) {
+  .line-right {
+    border-right: 0px solid #B5B5B5;
+    display: inline-block;
+    width: 100%;
+    padding-right: 0; } }
+
+.search__group {
+  padding-bottom: 10px; }
+
+.search__check {
+  padding-bottom: 40px;
+  font-family: "heeboregular";
+  color: #555555;
+  font-size: 22px; }
+
+.search__label {
+  font-size: 20px;
+  color: #B5B5B5; }
+
+.button {
+  font-family: "heebobold";
+  color: #F98100;
+  padding: 10px 40px;
+  border: 2px solid #F98100;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  background-color: #fff;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  font-size: 15px; }
+
+.button:hover {
+  color: #fff;
+  background-color: #F98100; }
 
 /*header*/
 .header__title {
@@ -336,8 +405,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   background-size: 100% auto;
   background-position: center center;
   background-repeat: no-repeat;
-  width: 40px;
-  height: 40px; }
+  width: 45px;
+  height: 45px; }
 
 @media (max-width: 600px) {
   .icon-crown {
@@ -386,6 +455,25 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   padding-top: 80px;
   padding-bottom: 25px; }
 
+.box-edit {
+  display: block;
+  height: 100%;
+  right: 0;
+  width: 93%;
+  top: 0;
+  -webkit-box-shadow: 6px 9px 41px -15px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 6px 9px 41px -15px rgba(0, 0, 0, 0.75);
+  box-shadow: 6px 9px 41px -15px rgba(0, 0, 0, 0.75);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  position: absolute;
+  z-index: 0; }
+
+@media (max-width: 767px) {
+  .box-edit {
+    width: 100%; } }
+
 @media (max-width: 600px) {
   .box {
     padding-top: 25px; } }
@@ -403,18 +491,99 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     font-size: 1.6em;
     display: inline-block; }
 
+.calendar__header {
+  color: #555555;
+  font-family: "heeboregular";
+  font-size: 15px;
+  padding-bottom: 5px;
+  text-align: center;
+  display: inline-block;
+  width: 100%; }
+
 @media (max-width: 600px) {
   .filter__title {
     font-size: 1em;
     letter-spacing: 2px;
     padding-bottom: 25px; } }
 
+.price {
+  padding-top: 30%;
+  padding-left: 25%;
+  padding-right: 25%;
+  width: 50%;
+  text-align: left; }
+
+.value {
+  text-align: right;
+  color: #79BD1A;
+  font-family: "Montserrat-SemiBold";
+  font-size: 30px; }
+
+@media (max-width: 920px) {
+  .value {
+    font-size: 16px; } }
+
+@media (max-width: 1225px) and (min-width: 921px) {
+  .value {
+    font-size: 24px; } }
+
+@media (max-width: 767px) {
+  .value {
+    text-align: left; } }
+
+.label {
+  font-family: "montserratthin";
+  font-size: 16px;
+  text-align: right;
+  color: #B5B5B5; }
+
+@media (max-width: 1225px) and (min-width: 921px) {
+  .label {
+    font-size: 15px; } }
+
+@media (max-width: 920px) {
+  .label {
+    font-size: 14px; } }
+
+@media (max-width: 767px) {
+  .label {
+    text-align: left; } }
+
+@media (max-width: 767px) {
+  .price {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 0;
+    padding-left: 0;
+    text-align: left;
+    width: 100%; } }
+
+.hotel {
+  padding-bottom: 5px;
+  padding-top: 5px;
+  position: relative;
+  margin-bottom: 30px; }
+  .hotel__title {
+    font-size: 16px;
+    font-family: "heebobold";
+    padding-bottom: 5px;
+    padding-top: 5px;
+    color: #F98100; }
+  .hotel__text {
+    color: #B5B5B5;
+    font-family: "heeboregular";
+    font-size: 15px; }
+
+@media (max-width: 767px) {
+  .hotel {
+    padding: 5px 6%; } }
+
 /*footer*/
 .footer {
   padding: 10px 0;
   text-align: center; }
   .footer__text {
-    color: #999;
+    color: #B5B5B5;
     font-family: "heeboregular";
     font-size: 0.9em; }
 
@@ -452,9 +621,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   box-sizing: border-box;
   width: 14.28571%;
   list-style: none;
-  font-size: 16px;
+  font-size: 15px;
   text-align: center;
   cursor: pointer;
+  font-family: "heeboregular";
   user-select: none; }
 
 .Cal__Day__root.Cal__Day__enabled.Cal__Day__highlighted, .Cal__Day__root.Cal__Day__enabled:active, .Cal__Day__root.Cal__Day__enabled:hover {
@@ -538,7 +708,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   position: relative;
   top: 5px;
   font-weight: bold;
-  font-size: 18px; }
+  font-size: 16px; }
 
 .Cal__Day__root.Cal__Day__disabled {
   color: #AAA;
@@ -579,7 +749,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 .Cal__Day__range.Cal__Day__selected.Cal__Day__start .Cal__Day__selection {
   border-top-left-radius: 50%;
-  border-bottom-left-radius: 50%; }
+  border-bottom-left-radius: 50%;
+  background-color: #79BD1A !important; }
 
 .Cal__Day__range.Cal__Day__selected.Cal__Day__start:after {
   right: 0; }
@@ -599,7 +770,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 .Cal__Day__range.Cal__Day__selected.Cal__Day__betweenRange .Cal__Day__day {
   top: 0;
-  font-size: 16px; }
+  font-size: 15px; }
 
 .Cal__Day__range.Cal__Day__selected.Cal__Day__betweenRange .Cal__Day__month {
   display: none; }
@@ -610,6 +781,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .Cal__Day__range.Cal__Day__selected.Cal__Day__end .Cal__Day__selection {
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
+  border-color: #79BD1A !important;
   color: inherit !important;
   background-color: #FFF !important;
   border: 2px solid;
@@ -654,7 +826,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   align-items: center;
   box-sizing: border-box;
   overflow: hidden;
-  min-height: 98px;
   padding: 20px;
   line-height: 1.3;
   font-weight: 400;
@@ -692,25 +863,28 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   transition: color 0.3s ease; }
 
 .Cal__Header__dateWrapper.Cal__Header__active {
-  color: white; }
+  color: #555555; }
 
 .Cal__Header__dateWrapper.Cal__Header__day {
-  height: 38px;
-  font-size: 36px;
-  line-height: 36px;
-  text-transform: capitalize; }
+  height: 20px;
+  font-size: 16px;
+  line-height: 16px;
+  color: #555555;
+  font-family: "heeboregular"; }
 
 .Cal__Header__dateWrapper.Cal__Header__year {
   height: 20px;
   font-size: 18px;
-  line-height: 18px; }
+  line-height: 18px;
+  font-family: "heeboregular"; }
 
 .Cal__Header__date {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0; }
+  bottom: 0;
+  color: #555555; }
 
 .Cal__Header__range {
   display: flex;
@@ -804,11 +978,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   box-shadow: inset 0 -1px rgba(0, 0, 0, 0.04); }
 
 .Cal__Weekdays__day {
-  padding: 15px 0;
+  padding: 10px 0;
   flex-basis: 14.28571%;
   flex-grow: 1;
   font-weight: 500;
-  text-align: center; }
+  text-align: center;
+  color: #B5B5B5;
+  font-family: "heebobold";
+  font-size: 15px;
+  border-bottom: #E3E3E3 1px solid; }
 
 .Cal__Years__root {
   position: absolute;

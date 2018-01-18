@@ -26,8 +26,8 @@ const Detail = (props) => {
     if (props.checkin && props.checkout) {
       return (
         <div className='description col-1-1'>     
-          <div className='title filter__title'>
-            Best choices between {formatDate(props.checkin)} and  {formatDate(props.checkout)}       
+          <div className='title title--normal  filter__title'>
+            Best choices between {formatDate(props.checkin)} and {formatDate(props.checkout)}       
           </div>
         </div>)
     }

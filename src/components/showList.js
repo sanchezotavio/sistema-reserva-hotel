@@ -2,9 +2,11 @@ import React from 'react';
 import ShowItem from './showItem';
 
 const ShowList = (props) => {
-  const shows = props.shows.map((show) => {
-    if(show.snippet) {
-      return <ShowItem show={show} key={show.id.videoId} onShowSelect={props.onShowSelect} />
+  var hotel = 0
+   const shows = props.shows.map((show) => {
+    if(show.name) {
+      hotel++
+      return <ShowItem show={show} key={`hotel-${hotel}`} onShowSelect={props.onShowSelect} />     
     }
   });
   return (

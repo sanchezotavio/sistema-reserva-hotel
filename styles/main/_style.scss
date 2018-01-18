@@ -1,13 +1,18 @@
 /*font*/
 $font: 'heeboregular';
+$font-light: 'montserratthin';
+$font-ms: 'montserratregular';
 $font-medium: 'heebomedium';
 $font-bold: 'heebobold';
+$font-sr-semibold: 'Montserrat-SemiBold';
 $font-black: 'heeboblack';
 
 /*colors*/
 $color-light: #fff;
 $color-main: #F98100;
-$color-light-normal: #999;
+$color-light-normal: #B5B5B5;
+$color: #79BD1A;
+$color-check: #555555;
 
 /* main style*/
 .link{
@@ -25,12 +30,12 @@ $color-light-normal: #999;
 }
 
 .title{
-    font-family: $font-bold;
+    font-family: $font-sr-semibold;
     
 
     &--welcome{
         color: $color-light;
-        font-size: 1.2em;
+        font-size: 22px;
         padding: 8px 0;
         letter-spacing: 3px;
         letter-spacing: 15px;
@@ -38,23 +43,39 @@ $color-light-normal: #999;
 
     &--main{
         color: $color-light;
-        font-size: 5.5em;
-        padding: 20px 0 15px 0;
+        font-size: 76px;
+        padding-top: 20px;
+        padding-bottom: 15px;
         line-height: 84px;
-        font-family: $font-black;
+        font-family: $font-sr-semibold;
         letter-spacing: 15px;
     }
 
     &--sub{
         color: $color-light;
-        font-size: 1.2em;
+        font-size: 22px;
         padding: 8px 0;
         letter-spacing: 3px;
+    }
+
+    &--normal{
+      font-family: $font-ms;
+      font-size: 22px;
     }
 
     
 }
 
+.image{
+  width: 100%;
+  max-width: 238px;
+  margin: auto;
+  -webkit-border-radius: 3px; 
+  -moz-border-radius: 3px; 
+  border-radius: 3px; 
+  z-index: 1;
+  position: relative;
+}
 
 
 @media (max-width: 600px) 
@@ -69,7 +90,7 @@ $color-light-normal: #999;
     
         &--main{
             font-size: 3em;
-            padding: 5px 0px 0px;
+            padding-top: 5px;
             line-height: 50px;      
         }
     
@@ -78,8 +99,9 @@ $color-light-normal: #999;
             padding: 0;           
         }
 
-        &__filter{
-            letter-spacing: 1px;
+        &--normal{
+          font-size: 1em;
+          padding: 0;           
         }
     }
 }
@@ -88,7 +110,67 @@ $color-light-normal: #999;
     border-top: 1px solid $color-light;
     border-bottom:  1px solid $color-light;
     display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
 }
+
+.line-right{
+  border-right:  1px solid $color-light-normal;
+  display: inline-block;
+  width: 96%;
+  padding-right: 4%;
+}
+
+@media (max-width: 767px) 
+{
+  .line-right{
+    border-right:  0px solid $color-light-normal;
+    display: inline-block;
+    width: 100%;
+    padding-right: 0;
+  }
+}
+
+.search{
+   &__group{
+     padding-bottom: 10px;
+   }
+
+   &__check{
+     padding-bottom: 40px;
+     font-family: $font;
+     color: $color-check;
+     font-size: 22px;
+   }
+
+   &__label{
+    font-size: 20px;
+    color: $color-light-normal;
+   }
+}
+
+.button{
+  font-family: $font-bold;
+  color: $color-main;
+  padding: 10px 40px;
+  border: 2px solid $color-main;
+  -webkit-border-radius: 25px; 
+  -moz-border-radius: 25px; 
+  border-radius: 25px; 
+  background-color: $color-light;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.button:hover{
+  color: $color-light;  
+  background-color: $color-main ;
+}
+
 
 /*header*/
 
@@ -116,8 +198,8 @@ $color-light-normal: #999;
     background-size: 100% auto;
     background-position: center center;
     background-repeat:  no-repeat;
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
 }  
 
 @media (max-width: 600px) 
@@ -181,6 +263,29 @@ $color-light-normal: #999;
     padding-bottom: 25px;
 }
 
+.box-edit{  
+  display: block; 
+  height: 100%;
+  right: 0;
+  width: 93%;
+  top: 0;
+  -webkit-box-shadow: 6px 9px 41px -15px rgba(0,0,0,0.75);
+  -moz-box-shadow: 6px 9px 41px -15px rgba(0,0,0,0.75);
+  box-shadow: 6px 9px 41px -15px rgba(0,0,0,0.75);
+  -webkit-border-radius: 3px; 
+  -moz-border-radius: 3px; 
+  border-radius: 3px; 
+  position: absolute;
+  z-index: 0;
+}
+
+@media (max-width: 767px) 
+{
+  .box-edit{  
+    width: 100%;    
+  }
+}
+
 @media (max-width: 600px) 
 {
     .box{
@@ -204,6 +309,16 @@ $color-light-normal: #999;
     }
 }
 
+.calendar__header{
+  color: $color-check;
+  font-family: $font;
+  font-size: 15px;
+  padding-bottom: 5px;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+
 
 @media (max-width: 600px) 
 {
@@ -218,7 +333,114 @@ $color-light-normal: #999;
 
 }
 
+.price{
+  padding-top: 30%;
+  padding-left: 25%;
+  padding-right: 25%;
+  width: 50%;
+  text-align:left;
+}
 
+.value{
+  text-align: right;
+  color: $color;
+  font-family: $font-sr-semibold;
+  font-size: 30px;
+}
+
+@media (max-width: 920px) 
+{
+  .value{   
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1225px) and  (min-width: 921px)
+{
+  .value{   
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 767px) 
+{
+  .value{   
+    text-align: left;
+  }
+}
+
+
+
+.label{
+  font-family: $font-light;
+  font-size: 16px;
+  text-align: right; 
+  color: $color-light-normal;
+}
+
+@media (max-width: 1225px)  and  (min-width: 921px)
+{
+  .label{   
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 920px) 
+{
+  .label{   
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767px) 
+{
+  .label{   
+    text-align: left;
+  }
+}
+
+
+@media (max-width: 767px) 
+{
+  .price{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 0;
+    padding-left: 0;
+    text-align:left;
+    width: 100%;
+  }
+  
+}
+
+.hotel{
+
+  padding-bottom: 5px;
+  padding-top: 5px;
+  position: relative;
+  margin-bottom: 30px;
+
+   &__title{
+     font-size: 16px;
+     font-family:  $font-bold;
+     padding-bottom: 5px;
+     padding-top: 5px;
+     color: $color-main;
+   }
+
+   &__text{
+    color: $color-light-normal;
+    font-family: $font;
+    font-size: 15px;
+   }
+}
+
+@media (max-width: 767px) 
+{
+  .hotel{  
+    padding: 5px 6%;
+  }
+}
 /*footer*/
 
 .footer{
@@ -269,9 +491,10 @@ $color-light-normal: #999;
   box-sizing: border-box;
   width: 14.28571%;
   list-style: none;
-  font-size: 16px;
+  font-size: 15px;
   text-align: center;
   cursor: pointer;
+  font-family: $font;
   user-select: none; }
   .Cal__Day__root.Cal__Day__enabled.Cal__Day__highlighted, .Cal__Day__root.Cal__Day__enabled:active, .Cal__Day__root.Cal__Day__enabled:hover {
     position: relative;
@@ -339,7 +562,7 @@ $color-light-normal: #999;
         position: relative;
         top: 5px;
         font-weight: bold;
-        font-size: 18px; }
+        font-size: 16px; }
   .Cal__Day__root.Cal__Day__disabled {
     color: #AAA;
     cursor: not-allowed; }
@@ -378,7 +601,9 @@ $color-light-normal: #999;
 
 .Cal__Day__range.Cal__Day__selected.Cal__Day__start .Cal__Day__selection {
   border-top-left-radius: 50%;
-  border-bottom-left-radius: 50%; }
+  border-bottom-left-radius: 50%; 
+  background-color:#79BD1A !important;
+}
 
 .Cal__Day__range.Cal__Day__selected.Cal__Day__start:after {
   right: 0; }
@@ -398,7 +623,7 @@ $color-light-normal: #999;
 
 .Cal__Day__range.Cal__Day__selected.Cal__Day__betweenRange .Cal__Day__day {
   top: 0;
-  font-size: 16px; }
+  font-size: 15px; }
 
 .Cal__Day__range.Cal__Day__selected.Cal__Day__betweenRange .Cal__Day__month {
   display: none; }
@@ -409,6 +634,7 @@ $color-light-normal: #999;
 .Cal__Day__range.Cal__Day__selected.Cal__Day__end .Cal__Day__selection {
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
+  border-color: #79BD1A !important;
   color: inherit !important;
   background-color: #FFF !important;
   border: 2px solid;
@@ -449,7 +675,6 @@ width: 100% !important;
   align-items: center;
   box-sizing: border-box;
   overflow: hidden;
-  min-height: 98px;
   padding: 20px;
   line-height: 1.3;
   font-weight: 400;
@@ -483,23 +708,27 @@ width: 100% !important;
   color: rgba(255, 255, 255, 0.5);
   transition: color 0.3s ease; }
   .Cal__Header__dateWrapper.Cal__Header__active {
-    color: white; }
-  .Cal__Header__dateWrapper.Cal__Header__day {
-    height: 38px;
-    font-size: 36px;
-    line-height: 36px;
-    text-transform: capitalize; }
+    color: #555555; }
+  .Cal__Header__dateWrapper.Cal__Header__day { 
+    height: 20px;
+    font-size: 16px;
+    line-height: 16px;
+    color: #555555;
+    font-family:  $font;
+  }
   .Cal__Header__dateWrapper.Cal__Header__year {
     height: 20px;
     font-size: 18px;
-    line-height: 18px; }
+    line-height: 18px; font-family:  $font; }
 
 .Cal__Header__date {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0; }
+  bottom: 0; 
+  color: #555555;
+}
 
 .Cal__Header__range {
   display: flex;
@@ -578,11 +807,16 @@ width: 100% !important;
   box-shadow: inset 0 -1px rgba(0, 0, 0, 0.04); }
 
 .Cal__Weekdays__day {
-  padding: 15px 0;
+  padding: 10px 0;
   flex-basis: 14.28571%;
   flex-grow: 1;
   font-weight: 500;
-  text-align: center; }
+  text-align: center;
+  color: #B5B5B5;
+  font-family: $font-bold;
+  font-size: 15px;
+  border-bottom: #E3E3E3 1px solid;
+}
 .Cal__Years__root {
   position: absolute;
   left: 0;
