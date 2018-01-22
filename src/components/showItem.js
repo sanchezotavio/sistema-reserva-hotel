@@ -44,6 +44,7 @@ class ShowItem extends React.Component {
     }
 
     this.handleClick = this.handleClick.bind(this);
+    this.bookHotel = this.bookHotel.bind(this);
   }
 
 
@@ -57,6 +58,10 @@ class ShowItem extends React.Component {
     this.setState(prevState => ({
       history: !prevState.history
     }));
+  }
+
+  bookHotel() {    
+    console.log(this.props.show)
   }
 
   render() {
@@ -81,7 +86,7 @@ class ShowItem extends React.Component {
               <h4 className="title hotel__title">{this.props.show.name}</h4>
               <p className="text hotel__text">{this.props.show.description}</p>
               <div className="group">
-                <button className='button button--book'> Book now </button>
+                <button className='button button--book' onClick={this.bookHotel}> Book now </button>
                 <button className='button button--price' onClick={this.handleClick}> Price history </button>
               </div>
             </div>

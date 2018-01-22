@@ -59,7 +59,6 @@ class Home extends Component {
 
   filter(maxPrice, minPrice, starsRate) {      
     var newHotels = this.state.shows
-
     for (var data in newHotels) {
       if (newHotels[data].price <= maxPrice && newHotels[data].price >= minPrice) {
         if (starsRate > 0) {
@@ -78,7 +77,6 @@ class Home extends Component {
         newHotels[data].v = false
       }
     }
-
     this.setState({ shows: newHotels })
 
   }
