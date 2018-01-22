@@ -6,6 +6,7 @@
   "dependencies": {
     "axios": "^0.15.3",
     "css-loader": "^0.26.1",
+    "express": "^4.16.2",
     "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^1.1.6",
     "node-sass": "^4.5.0",
@@ -35,7 +36,8 @@
   "scripts": {
     "build": "npm run clean && webpack",
     "clean": "rimraf public",
-    "start": "webpack-dev-server"
+    "webpack": "webpack-dev-server",
+    "start": "node server"
   },
   "author": "Otávio Sanchez",
   "license": "ISC"

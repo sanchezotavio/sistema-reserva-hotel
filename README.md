@@ -19,7 +19,7 @@ npm run start
 ```
 
 Acesse a aplicação no endereço:
-localhost:8080/
+localhost:3000/
 
 ## Link Externo
 
