@@ -2,41 +2,40 @@ import React from 'react'
 
 import InfiniteCalendar, { Calendar, withRange } from 'react-infinite-calendar';
 
+import { goToAnchor  } from 'react-scrollable-anchor'
 
 const formatDate = (date) => {
-
   date = new Date(date)
 
-  var monthNames = [
+  let monthNames = [
     "January", "February", "March",
     "April", "May", "June", "July",
     "August", "September", "October",
     "November", "December"
   ];
 
-  var day = date.getDate();
-  var monthIndex = date.getMonth();
-  var year = date.getFullYear();
+  let day = date.getDate();
+  let monthIndex = date.getMonth();
+  let year = date.getFullYear();
 
   return `${monthNames[monthIndex]} ${day}, ${year}`;
 
 }
 
-
 const formatCalendar = (date) => {
 
   date = new Date(date)
 
-  var monthNames = [
+  let monthNames = [
     "January", "February", "March",
     "April", "May", "June", "July",
     "August", "September", "October",
     "November", "December"
   ];
 
-  var day = date.getDate();
-  var monthIndex = date.getMonth();
-  var year = date.getFullYear();
+  let day = date.getDate();
+  let monthIndex = date.getMonth();
+  let year = date.getFullYear();
 
   return `${monthNames[monthIndex]} / ${year}`;
 
@@ -59,6 +58,8 @@ class Search extends React.Component {
     console.log(this.state.checkin)
     console.log(this.state.checkout)
     this.props.onSearch(this.state.checkin, this.state.checkout)
+    goToAnchor('detail', false)
+   
   }
 
   onChange(value) {
@@ -140,8 +141,6 @@ class Search extends React.Component {
                 color: '#FFF',
                 chevron: '#79BD1A'
               },
-
-
             }}
           />
         </div>

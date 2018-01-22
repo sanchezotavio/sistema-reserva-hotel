@@ -1,13 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Slider, { Range } from 'rc-slider';
+import { goToAnchor ,removeHash  } from 'react-scrollable-anchor'
 
 const style = { width: 400, margin: 50 };
-
-function log(value) {
-  console.log(value); //eslint-disable-line
-}
-
 
 class Filter extends React.Component {
 
@@ -26,12 +22,12 @@ class Filter extends React.Component {
     this.onAfterChange = this.onAfterChange.bind(this);
   }
 
-  onAfterChange(value) {   
+  onAfterChange(value) {
     this.setState({ min: value[0], max: value[1] })
     this.props.onFilter(value[1], value[0], this.state.rate)
   }
 
-  onSliderChange(value) {   
+  onSliderChange(value) {
     this.setState({ min: value[0], max: value[1] })
   }
 
@@ -61,12 +57,12 @@ class Filter extends React.Component {
               <Range defaultValue={[100, 1000]} min={100} max={1000}
                 onChange={this.onSliderChange} onAfterChange={this.onAfterChange}
               />
-            </div>           
+            </div>
             <div className="col-1-2  mobile-col-1-2">
               <div className="title filter__title">
                 Min:
               </div>
-              <div  className="count filter__count left">
+              <div className="count filter__count left">
                 $ {this.state.min}
               </div>
             </div>
@@ -78,9 +74,9 @@ class Filter extends React.Component {
                 $ {this.state.max}
               </div>
             </div>
-          </div>         
+          </div>
           <div className="filter  filter--hotel">
-            <div className="line-hr"></div>            
+            <div className="line-hr"></div>
             <div className="title filter__title">Stars</div>
             <button className={this.cssStar(0, this.state.rate)} onClick={(e) => this.filterRate(1, e)}> 1 </button>
             <button className={this.cssStar(1, this.state.rate)} onClick={(e) => this.filterRate(2, e)}> 2 </button>

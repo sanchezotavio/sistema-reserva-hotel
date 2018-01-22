@@ -13,7 +13,7 @@ const hiddenClass = (status) => {
 
 
 const starRate = (rate) => {
-  var stars = [];
+  let stars = [];
 
   for (var i = 1; i <= rate; i++) {
     stars.push(<div className="icon-star"></div>)

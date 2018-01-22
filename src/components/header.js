@@ -1,5 +1,7 @@
 import React from 'react';
 
+import {Link} from 'react-router'
+
 class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -20,10 +22,10 @@ class Header extends React.Component {
       <header className="header">
         <div className="bg"></div>
         <nav className="nav grid--header">
-          <ul className="menu">
-            <li className="item"><a className="link" href="">The Queen city</a></li>
-            <li className="item"><a className="link" href="">My Reservations</a></li>
-            <li className="item"><a className="link" href="">Guide</a></li>
+          <ul className="menu">       
+            <li className="item"><Link to={`/about`} className="link">The Queen city</Link></li>
+            <li className="item"><Link to={`/reservations`} className="link">My Reservations</Link></li>
+            <li className="item"><Link to={`/guide`} className="link">Guide</Link></li>
           </ul>
         </nav>
         <div className="header__title grid">
