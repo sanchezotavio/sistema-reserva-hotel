@@ -7,7 +7,7 @@ const hiddenClass = (status) => {
     return 'hidden'
   }
   else {
-    return 'visible'
+    return 'visible--g'
   }
 }
 

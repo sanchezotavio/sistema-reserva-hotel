@@ -8,6 +8,7 @@ const style = { width: 400, margin: 50 };
 class Filter extends React.Component {
 
   constructor(props) {
+
     super(props);
 
     this.state = {
@@ -16,10 +17,10 @@ class Filter extends React.Component {
       max: 1000
     }
 
-
     this.filterRate = this.filterRate.bind(this);
     this.onSliderChange = this.onSliderChange.bind(this);
     this.onAfterChange = this.onAfterChange.bind(this);
+    
   }
 
   onAfterChange(value) {
@@ -31,10 +32,10 @@ class Filter extends React.Component {
     this.setState({ min: value[0], max: value[1] })
   }
 
-  filterRate(rateN, event) {
-    event.preventDefault()
+  filterRate(rateN, event) {   
     this.setState({ rate: rateN })
     this.props.onFilter(this.state.max, this.state.min, rateN)
+    event.preventDefault()
   }
 
   cssStar(newRate, rate) {

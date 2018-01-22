@@ -541,6 +541,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 .hidden {
   height: 0px;
+  min-height: 0px;
   display: block;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -549,8 +550,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   overflow: hidden;
   opacity: 0; }
 
-.visible {
+.visible, .visible--g {
   height: auto;
+  min-height: 100px;
   display: inline-block;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -558,6 +560,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   transition: all 0.3s ease-in-out;
   position: relative;
   z-index: 1; }
+  .visible--g {
+    min-height: auto; }
 
 .group {
   padding: 20px 0; }
@@ -628,7 +632,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   width: 100% !important; }
 
 .recharts-responsive-container {
-  height: 300px !important; }
+  height: 280px !important;
+  font-family: "heeboregular"; }
 
 .calendar__header {
   color: #555555;
@@ -941,7 +946,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   border-bottom-right-radius: 50%;
   border-color: #79BD1A !important;
   color: inherit !important;
-  background-color: #FFF !important;
+  background-color: #fff !important;
   border: 2px solid;
   box-sizing: border-box; }
 
@@ -976,7 +981,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .Cal__Container__listWrapper {
   position: relative;
   overflow: hidden;
-  background-color: #FFF; }
+  background-color: #fff; }
 
 .Cal__Header__root {
   position: relative;
@@ -1118,7 +1123,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 .Cal__MonthList__root {
   width: 100% !important;
-  background-color: #FFF;
+  background-color: #fff;
   -webkit-overflow-scrolling: touch; }
 
 .Cal__MonthList__root.Cal__MonthList__scrolling > div {
@@ -1240,7 +1245,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   position: relative;
   z-index: 1;
   background-color: blue;
-  color: #FFF !important;
+  color: #fff !important;
   border: 0; }
 
 .Cal__Years__year ol li.Cal__Years__disabled {
@@ -1372,7 +1377,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   text-align: right; }
 
 .Cal__Month__row:first-child li {
-  background-color: #FFF;
+  background-color: #fff;
   box-shadow: 0 -1px 0 #E9E9E9; }
 
 .Cal__Month__row:nth-child(2) {

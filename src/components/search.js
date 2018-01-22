@@ -62,28 +62,24 @@ class Search extends React.Component {
    
   }
 
-  onChange(value) {
-    this.setState({ term: value })
-  }
-
   componentDidMount() {
-    var today = new Date();
+    let today = new Date();
     this.setState({ checkin: today.toString() })
     this.setState({ checkout: today.toString() })
   }
 
   render() {
 
-    var today = new Date();
+    let today = new Date();
 
-    var next = new Date(2018, 2, 1)
+    let next = new Date(2018, 2, 1)
 
-    var lastWeek = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    let lastWeek = new Date(today.getFullYear(), today.getMonth(), today.getDate());
 
-    var refreshDate = (date) => {
+    const refreshDate = (date) => {
 
-      var checkinDate = date.start
-      var checkoutDate = date.end
+      let checkinDate = date.start
+      let checkoutDate = date.end
 
       this.setState({ checkin: checkinDate.toString() })
       this.setState({ checkout: checkoutDate.toString() })
