@@ -1,7 +1,7 @@
 import React from 'react'
 
-const   formatDate = (date) => {
-  
+const formatDate = (date) => {
+
   date = new Date(date)
 
   var monthNames = [
@@ -15,7 +15,7 @@ const   formatDate = (date) => {
   var monthIndex = date.getMonth();
   var year = date.getFullYear();
 
-  return  `${monthNames[monthIndex]} ${day}, ${year}`;
+  return `${monthNames[monthIndex]} ${day}, ${year}`;
 
 }
 
@@ -23,21 +23,21 @@ const   formatDate = (date) => {
 const Detail = (props) => {
 
 
-    if (props.checkin && props.checkout) {
-      return (
-        <div className='description col-1-1'>     
-          <div className='title title--normal  filter__title'>
-            Best choices between {formatDate(props.checkin)} and {formatDate(props.checkout)}       
-          </div>
-        </div>)
-    }
-    else{
-      return (
-        <div></div>
-      )
-    }
- 
-  
+  if (props.checkin && props.checkout) {
+    return (
+      <div className='description col-1-1'>
+        <div className='title title--normal'>
+          Best choices between {formatDate(props.checkin)} and {formatDate(props.checkout)}
+        </div>
+      </div>)
+  }
+  else {
+    return (
+      <div></div>
+    )
+  }
+
+
 }
 
 export default Detail

@@ -60,8 +60,8 @@ const config = {
     new UglifyJSPlugin({
       uglifyOptions: {
         debug: false,
-        minimize: false,
-        sourceMap: false,
+        minimize: true,
+        sourceMap: true,
         output: {
           comments: false
         },
